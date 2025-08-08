@@ -3,8 +3,7 @@ This repository contains the extended experimental results for our proposed Neur
 # 🧠 Neuro-Symbolic Self-Healing Framework – Experimental Results
 
 This repository provides extended figures, tables, and detailed explanations of the experimental results from our paper on a neuro-symbolic framework for proactive security and self-healing in disrupted environments.
-
-> 📄 **[Paper Link (optional)]**  
+ 
 > 📬 For access to the full framework or codebase, please contact: [your-email@domain.com]
 
 ---
@@ -147,5 +146,4 @@ Our evaluation focuses on three main areas:
 
 ---
 
-## 📎 Citation
 
