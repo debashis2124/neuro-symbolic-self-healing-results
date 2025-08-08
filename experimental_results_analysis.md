@@ -5,13 +5,12 @@ We evaluate our **NeuroSymbolic Self-Healing framework** along three axes:
 - **Recovery efficacy**
 - **End-to-end resilience under disruption**
 
-Our full implementation is open‐source and available on GitHub [\[code\]](https://github.com/yourrepo/codeexperiment).
 
 ---
 
 ## 📊 Experimental Setup
 
-We evaluated our neurosymbolic risk-scoring pipeline on a **real-world DoD contracts dataset** [\[dataset\]](https://github.com/yourrepo/dataset) (~120,000 records).
+We evaluated our neurosymbolic risk-scoring pipeline on a **real-world DoD contracts dataset** (~120,000 records).
 
 - Defined binary high-risk label:  
   `label = 1` if obligation > $150,000 or modification > 0  
