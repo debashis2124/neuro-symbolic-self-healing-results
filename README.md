@@ -4,7 +4,7 @@ This repository contains the extended experimental results for our proposed Neur
 
 This repository provides extended figures, tables, and detailed explanations of the experimental results from our paper on a neuro-symbolic framework for proactive security and self-healing in disrupted environments.
  
-> 📬 For access to the full framework or codebase, please contact: [your-email@domain.com]
+> 📬 For access to the full framework or codebase, please contact: [debashis.das@ieee.org]
 
 ---
 
@@ -144,6 +144,7 @@ Our evaluation focuses on three main areas:
 - **Recovery**: NS methods recover fewer but safer nodes due to hard constraint satisfaction.
 - **Resilience**: Throughput remains >90% under 20% node failures for NS methods, vs <80% for baselines.
 
----
+📄 Detailed results: [experimental_results_analysis.md](experimental_results_analysis.md)
+
 
 
