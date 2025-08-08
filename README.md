@@ -156,10 +156,10 @@ We analyze the performance of various neuro-symbolic configurations across:
 - **Synthetic Augmentation**: Simulated disruptions with transformations:
     x_syn = T(x_real, θ)
 
-**Adversarial Robustness**: GAN-based perturbation generation using:
+- **Adversarial Robustness**: GAN-based perturbation generation using:
     min_G max_D E_{x∼p_real}[log D(x)] + E_{z∼p_z}[log(1 - D(G(z)))]
 
-**Transfer Learning**: Fast adaptation using lightweight delta:
+- **Transfer Learning**: Fast adaptation using lightweight delta:
     f_tgt(x) = f_src(x) + Δf(x)
 
 ---
