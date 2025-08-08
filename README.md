@@ -1,85 +1,103 @@
-# neuro-symbolic-self-healing-results
-This repository contains the extended experimental results for our proposed Neuro-Symbolic Self-Healing Framework, designed for proactive threat detection and recovery in complex systems such as supply chains and cyber-physical networks.
 # 🧠 Neuro-Symbolic Self-Healing Framework – Experimental Results
 
-This repository provides extended figures, tables, and detailed explanations of the experimental results from our paper on a neuro-symbolic framework for proactive security and self-healing in disrupted environments.
- 
-> 📬 For access to the full framework or codebase, please contact: [debashis.das@ieee.org]
+This repository contains the extended **experimental results**, **performance figures**, and **recovery efficiency insights** from our paper on the Neuro-Symbolic Self-Healing framework for secure and resilient decision-making in supply chains and cyber-physical systems.
+
+> 📬 For access to full source code or implementation details, please contact: **[debashis.das@ieee.org]**
 
 ---
 
 ## 📊 Overview of Results
 
-Our evaluation focuses on three main areas:
+We analyze the performance of various neuro-symbolic configurations across:
 
 1. **Anomaly Detection Quality**
-2. **Recovery Efficiency**
-3. **Resilience Under Disruption**
+2. **Training & Generalization Behavior**
+3. **Recovery Efficiency**
+4. **Resilience Under Disruption**
 
 ---
 
-## 📁 Figure Explanations
+## 📁 Detailed Figures with Technical Explanation
+
+---
 
 ### 🔹 **Figure 1: Model-Level Score Behaviors**
 
-![Fig 1a](figures/figure_2a_autoencoder_loss.png)
-![Fig 1b](figures/figure_2b_autoencoder_accuracy.png)
-![Fig 1c](figures/figure_3_score_distribution.png)
-![Fig 1d](figures/figure_4_risk_score.png)
+![1a - Autoencoder Loss](figures/figure_2a_autoencoder_loss.png)
+> **Autoencoder Loss**: The LSTM autoencoder, trained on benign patterns, rapidly reduces reconstruction error from >0.03 to <0.005 in under 15 epochs, indicating strong pattern learning.
 
-- **(a)** *LSTM Autoencoder Loss*: The loss decreases from >0.03 to <0.005 within 15 epochs, showing fast learning of benign patterns.
-- **(b)** *Neural Classification Accuracy*: Accuracy improves from ~70% to over 88% with negligible overfitting.
-- **(c)** *Symbolic Score KDE*: Shows significant overlap in score distributions between benign and attack flows.
-- **(d)** *Hybrid Score KDE*: Fusion of neural and symbolic scores separates benign and attack scores clearly, improving classification boundaries.
+![1b - Neural Score Accuracy](figures/figure_2b_autoencoder_accuracy.png)
+> **Classification Accuracy**: Neural-only detection accuracy increases from ~70% to >88%, demonstrating effective anomaly separation.
 
----
+![1c - Symbolic Score KDE](figures/figure_3_score_distribution.png)
+> **Symbolic Score Distribution**: KDE plot shows significant overlap in symbolic rule-based scores between benign and attack flows, resulting in weaker discriminative power.
 
-### 🔹 **Figure 2: Training and Validation Metrics Across All NS Variants**
-
-![Training Accuracy](figures/training_accuracy.png)
-![Training Loss](figures/training_loss.png)
-![Training Precision](figures/training_precision.png)
-![Training Recall](figures/training_recall.png)
-![Training F1](figures/training_F1 score.png)
-![Validation Accuracy](figures/validation_accuracy.png)
-![Validation Loss](figures/validation_loss.png)
-![Validation Precision](figures/validation_precision.png)
-![Validation Recall](figures/validation_recall.png)
-
-- **Training Metrics (a–e)**: All neuro-symbolic (NS) variants converge rapidly with >99% accuracy and F1-score.
-- **Validation Metrics (f–i)**: High validation performance with low overfitting confirms generalization of NS models.
+![1d - Hybrid Score KDE](figures/figure_4_risk_score.png)
+> **Hybrid Risk Score**: Fused neural-symbolic scores shift the distribution boundary clearly, increasing classification accuracy and separability.
 
 ---
 
-### 🔹 **Figure 3: Phase-Wise Performance**
+### 🔹 **Figure 2: Training and Validation Dynamics**
 
-![Training Phase](figures/figure_training_preformance.png)
-![Validation Phase](figures/figure_validation_preformance.png)
-![Test Phase](figures/figure_test_preformance.png)
+![Training Accuracy](figures/training_accuracy.png)  
+> **Training Accuracy**: All NS variants achieve >99% accuracy, showing rapid and consistent convergence.
 
-- NS–Trans performs best across training, validation, and test phases.
-- Accuracy, precision, recall, F1, and ROC-AUC are all >99%.
+![Training Loss](figures/training_loss.png)  
+> **Training Loss**: Drops steadily for all NS configurations, indicating successful optimization with no signs of overfitting.
+
+![Training Precision](figures/training_precision.png)  
+> **Precision**: High precision (>0.99) across NS variants implies low false-positive rates.
+
+![Training Recall](figures/training_recall.png)  
+> **Recall**: High recall ensures correct identification of most compromised samples.
+
+![Training F1 Score](figures/training_F1%20score.png)  
+> **F1 Score**: Balanced performance across all NS models with F1 >0.99.
+
+![Validation Accuracy](figures/validation_accuracy.png)  
+> **Validation Accuracy**: Maintains strong generalization (0.996–0.998) across all NS variants.
+
+![Validation Loss](figures/validation_loss.png)  
+> **Validation Loss**: Low and stable, confirming no overfitting.
+
+![Validation Precision](figures/validation_precision.png)  
+> **Validation Precision**: Similar to training, high precision across unseen data.
+
+![Validation Recall](figures/validation_recall.png)  
+> **Validation Recall**: Models remain highly sensitive on validation set.
 
 ---
 
-### 🔹 **Figure 4: Validation F1-Score Comparison**
+### 🔹 **Figure 3: Phase-Wise Performance (All Metrics)**
 
-![F1 Validation](figures/validation F1 score.png)
+![Training Set](figures/figure_training_preformance.png)
+> **Training Set Summary**: All NS models exceed 99% in all performance metrics, including ROC-AUC.
 
-- NS–Trans and NS–Raw variants lead in F1-score, far surpassing neural-only and symbolic-only baselines.
+![Validation Set](figures/figure_validation_preformance.png)
+> **Validation Set Summary**: NS–Trans and NS–Raw variants continue to lead across metrics, with minimal degradation.
 
----
-
-### 🔹 **Figure 5: Compromised vs. Recovered Nodes**
-
-![Recovery](figures/compromised_recovery.png)
-
-- NS–Only and NS–Raw recover ~38–47% of compromised nodes.
-- Pure neural recovers more, but NS models yield constraint-compliant recovery with safer paths.
+![Test Set](figures/figure_test_preformance.png)
+> **Test Set Summary**: Real-world generalization remains robust with F1 and ROC-AUC near-perfect.
 
 ---
 
-## 📋 Table Explanations
+### 🔹 **Figure 4: F1-Score Comparison**
+
+![Validation F1](figures/validation%20F1%20score.png)
+> **Validation F1-Score Comparison**: F1-score is highest for NS–Trans and NS–Raw, demonstrating optimal balance between precision and recall.
+
+---
+
+### 🔹 **Figure 5: Recovery Analysis**
+
+![Compromised Recovery](figures/compromised_recovery.png)
+> **Compromised vs Recovered Nodes**: While NS–Only models recover fewer nodes than neural-only models, they do so with constraint compliance and stability.
+
+---
+
+## 📋 Tables with Insight
+
+---
 
 ### 📑 **Table 1: Performance Comparison Across Models**
 
@@ -92,7 +110,7 @@ Our evaluation focuses on three main areas:
 | NS–Adv        | 0.9977   | 0.9995    | 0.9968 | 0.9981| 0.9998  |
 | NS–Trans      | 0.9987   | 0.9984    | 0.9995 | 0.9989| 0.9998  |
 
-> **Insight**: NS–Trans and NS–Adv yield the highest detection accuracy and ROC-AUC on test sets.
+> **Insight**: All hybrid NS variants significantly outperform pure baselines. NS–Trans reaches near-perfect ROC-AUC.
 
 ---
 
@@ -108,43 +126,54 @@ Our evaluation focuses on three main areas:
 | NS–Adv        | 1858        | 1142      | 38.1%          |
 | NS–Trans      | 1865        | 1135      | 37.8%          |
 
-> **Insight**: NS variants recover fewer nodes than neural-only but with safer, constraint-respecting reroutes.
+> **Insight**: Hybrid models recover fewer nodes than neural-only but excel in constraint-adherence and recovery safety.
 
 ---
 
-## ⚙️ Experimental Setup
+## ⚙️ Experimental Configuration
 
-- **Dataset**: U.S. DoD contract dataset (~120k samples)
-- **High-risk labels**: Defined if obligation > $150K or if modification exists.
-- **Preprocessing**:
-  - Removed zero-variance features
-  - Standard-scaled features
-  - Stratified split: 60% train, 20% val, 20% test
+- **Dataset**: U.S. DoD contracts (~120K samples)
+- **Labeling**: Binary high-risk if `obligation > $150K` or `modification > 0`
+- **Split**: 60% training, 20% validation, 20% test
+- **Feature Engineering**:
+  - Zero-variance filtering
+  - Standard scaling
 
-**Model Details:**
-- LSTM autoencoder (64 units) trained on benign data
-- Symbolic score: Weighted rule-based logic
-- Risk Fusion:  
-  `R(x) = 0.6 f_NN(x) + 0.4 g_SR(x)`
-- NS model: MLP on `[R(x), x1, x2, x3]`
+### Model Architecture
+
+- **Autoencoder**: LSTM with 64 units (1-layer)
+- **Symbolic Rule Score**: Weighted logical conditions
+- **Hybrid Risk Fusion**:
+  
+  $$ R(x) = 0.6 \cdot f_{NN}(x) + 0.4 \cdot g_{SR}(x) $$
+
+- **MLP Classifier** on `[R(x), x_1, x_2, x_3]`
 
 ---
 
-## 🧪 Robustification Techniques
+## 🧪 Advanced Training Strategies
 
-- **Synthetic Augmentation**: Simulates disruptions with transformation \( \mathbf{x}_{\mathrm{syn}} = T(\mathbf{x}_{\mathrm{real}}, \boldsymbol{\theta}) \)
-- **Adversarial Training**: GANs generate hard-to-detect samples; discriminator shares encoder with the autoencoder
-- **Transfer Learning**: Adapts pretrained model \( f_{\text{src}} \) using lightweight correction \( \Delta f \)
+- **Synthetic Augmentation**:
+  Simulated disruptions with transformations:
+  
+  $$ \mathbf{x}_{\text{syn}} = T(\mathbf{x}_{\text{real}}, \theta) $$
+
+- **Adversarial Robustness**:
+  GAN-based perturbation generation using:
+
+  $$ \min_G\max_D \mathbb{E}_{x\sim p_{\text{real}}}[\log D(x)] + \mathbb{E}_{z\sim p_z}[\log(1 - D(G(z)))] $$
+
+- **Transfer Learning**:
+  Fast adaptation using lightweight delta:
+
+  $$ f_{\text{tgt}}(x) = f_{\text{src}}(x) + \Delta f(x) $$
 
 ---
 
 ## 🚀 Key Takeaways
 
-- **Detection**: All NS variants exceed 0.99 in F1 and AUC, outperforming neural-only and symbolic-only.
-- **Recovery**: NS methods recover fewer but safer nodes due to hard constraint satisfaction.
-- **Resilience**: Throughput remains >90% under 20% node failures for NS methods, vs <80% for baselines.
+- **Superior Detection**: All NS variants surpass 0.99 ROC-AUC.
+- **Safe Recovery**: Hybrid models ensure constraint-respecting reroutes.
+- **High Resilience**: NS models sustain >90% throughput under 20% disruptions.
 
-📄 Detailed results: [experimental_results_analysis.md](experimental_results_analysis.md)
-
-
-
+---
